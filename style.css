@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+.stats {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #555;
+}
+#search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+#pharmacy-list {
+    list-style: none;
+    padding: 0;
+}
+#pharmacy-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+#pharmacy-list li:last-child {
+    border-bottom: none;
+}
+#pharmacy-list li label {
+    flex: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+#pharmacy-list li input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+.visited {
+    text-decoration: line-through;
+    color: #888;
+}
