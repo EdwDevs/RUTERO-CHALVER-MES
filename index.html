@@ -3,25 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rutero de Farmacias por Días</title>
+    <title>Rutero Chalver — Planificación Mensual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Rutero de Farmacias</h1>
-        <div class="tabs">
-            <button class="tab-btn active" data-day="dia1">Día 1</button>
-            <button class="tab-btn" data-day="dia2">Día 2</button>
-            <button class="tab-btn" data-day="dia3">Día 3</button>
-            <button class="tab-btn" data-day="dia4">Día 4</button>
-            <button class="tab-btn" data-day="dia5">Día 5</button>
-            <button class="tab-btn" data-day="dia6">Día 6</button>
+    <div class="app">
+        <header>
+            <div class="brand">
+                <div class="logo">RC</div>
+                <div>
+                    <h1>Rutero Chalver</h1>
+                    <p class="subtitle">Planeación de visitas · Agosto 2026</p>
+                </div>
+            </div>
+            <button id="reset-btn" class="ghost-btn" title="Reiniciar día actual">↺ Reiniciar día</button>
+        </header>
+
+        <div class="progress-card">
+            <div class="progress-info">
+                <span class="big" id="visited-count">0</span>
+                <span class="sep">/</span>
+                <span id="total-count">0</span>
+                <span class="label">farmacias visitadas</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+            <span class="progress-pct" id="progress-pct">0%</span>
         </div>
-        <div class="stats">
-            <span id="visited-count">0</span> visitadas de <span id="total-count">0</span>
+
+        <nav class="tabs" id="tabs"></nav>
+
+        <div class="toolbar">
+            <div class="search-wrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Buscar farmacia por nombre o código..." autocomplete="off">
+                <button id="clear-search" class="clear-btn" hidden>✕</button>
+            </div>
+            <div class="filter-btns">
+                <button class="chip active" data-filter="all">Todas</button>
+                <button class="chip" data-filter="pending">Pendientes</button>
+                <button class="chip" data-filter="done">Visitadas</button>
+            </div>
         </div>
-        <input type="text" id="search-input" placeholder="Buscar farmacia...">
-        <ul id="pharmacy-list"></ul>
+
+        <ul id="pharmacy-list" class="list"></ul>
+
+        <div class="empty" id="empty" hidden>
+            <p>No hay farmacias que coincidan.</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
