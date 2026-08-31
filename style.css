@@ -16,6 +16,28 @@ h1 {
     text-align: center;
     color: #333;
 }
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.tab-btn {
+    background: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.tab-btn.active {
+    background: #4CAF50;
+    color: white;
+}
+.tab-btn:hover:not(.active) {
+    background: #d0d0d0;
+}
 .stats {
     text-align: center;
     margin-bottom: 20px;
